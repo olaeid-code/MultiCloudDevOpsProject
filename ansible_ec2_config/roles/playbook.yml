@@ -6,4 +6,5 @@
   become: true
   roles:
     - ec2_configuration
+    - packages1
 
