@@ -1,0 +1,19 @@
+---
+# tasks file for packages1
+
+- name: Install Git
+  package:
+    name: git
+    state: present
+
+
+- name: Install Java
+  package:
+    name: java-17-openjdk
+    state: latest
+
+- name: Install Docker
+  package:
+    name: docker-ce
+    state: latest
+
