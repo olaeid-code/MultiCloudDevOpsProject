@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub')
+        DOCKER_IMAGE_NAME = 'EngMohamedElEmam/spring-boot-app'
+        MAIN_BRANCH = 'main'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from the GitHub repository
+                script {
+                    git branch: 'main' , url: 'https://github.com/EngMohamedElEmam/spring-boot-app.git'
+                }
+            }
+        }
+        
+        stage('Build') {
+           
+            
+                steps {
+                    sh './gradlew build'
+                    sh 'docker build -t EngMohamedElEmam/spring-boot-app .'
+                }
+            
+        }
+        
+        stage('Push to Docker Hub') {
+        
+            
+            steps {
+                // Push the Docker image to Docker Hub
+                script {
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DOCKER_HUM_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
+                        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+                        sh "docker tag EngMohamedElEmam/spring-boot-app:latest olaeid/spring-boot-app:latest"
+                        sh "docker push olaeid/spring-boot-app:latest"
+                    }
+                }
+            }
+}   }   }
+
