@@ -2,8 +2,12 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub')
-        DOCKER_IMAGE_NAME = 'EngMohamedElEmam/spring-boot-app'
+        DOCKER_REGISTRY = 'docker.io/olaeid'
+        OPENSHIFT_SERVER = 'https://api.ocpuat.devopsconsulting.org:6443'
+        DOCKER_IMAGE = 'spring-boot-app:latest'
+        APP_SERVICE_NAME = 'spring-boot-app'
+        APP_PORT = '8080'
+        APP_HOST_NAME = 'spring-boot-app.apps.ocpuat.devopsconsulting.org'
         MAIN_BRANCH = 'main'
     }
     
@@ -27,18 +31,53 @@ pipeline {
             
         }
         
-        stage('Push to Docker Hub') {
+        stage('Unit Tests') {
+            steps {
+                script {
+                    // Build and run unit tests
+                    sh './gradlew clean build'
+                }
+            }
+        }
         
-            
+        stage('SonarQube test') {
+            steps {
+                withSonarQubeEnv('sonar-test') {
+                    // Run SonarQube analysis
+                    sh 'sonar-scanner'
+                    sh './gradlew sonarqube'
+                }
+            }
+        }
+
+        
+        
+        stage('Push to Docker Hub') { 
             steps {
                 // Push the Docker image to Docker Hub
                 script {
-                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DOCKER_HUM_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
-                        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+                    withCredentials([usernamePassword(credentialsId: 'hubdocker', usernameVariable: 'DOCKER_REGISTRY_USERNAME', passwordVariable: 'DOCKER_REGISTRY_PASSWORD')]) {
+                        sh "echo \${DOCKER_REGISTRY_PASSWORD} | docker login -u \${DOCKER_REGISTRY_USERNAME} --password-stdin"
                         sh "docker tag EngMohamedElEmam/spring-boot-app:latest olaeid/spring-boot-app:latest"
                         sh "docker push olaeid/spring-boot-app:latest"
                     }
                 }
+        }    }
+
+        stage('Deploy to OpenShift') {
+            steps {
+                script {
+                    withCredentials([file(credentialsId: 'open-shift', variable: 'config')]) {
+                    sh "oc login -u ola -p ola"
+                    }
+                    sh "oc project project1"
+                    sh "oc new-app \${DOCKER_REGISTRY}/${DOCKER_IMAGE}"
+                    sh "oc create route edge --service \${APP_SERVICE_NAME} --port \${APP_PORT} --hostname \${APP_HOST_NAME} --insecure-policy Redirect"
+                }
             }
-}   }   }
+        }
+
+
+        
+    }   }
 
