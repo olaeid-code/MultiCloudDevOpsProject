@@ -62,9 +62,32 @@
 
 ### Integrate SonarQube and openshift with Jenkins
 
-#### SonarQube installation
-###### Prerequisite:
-- Java 17
+- Add SonarScanner plugin in Jenkins
+
+  Manage Jenkins → Manage Plugins → Available Plugins → Search “SonarScanner” → Select checkbox → Install
+
+- configure Configure Jenkins SonarQube Scanner
+  
+  Manage Jenkins → Global Tool Configuration.
+
+  Provide a name, check Install automatically , select a version and save.
+  
+- Configure SonarQube server information, including the server URL and authentication token
+
+- Add the generated token in your sonnarqube project to Jenkins credentials
+
+- Install OpenShift Client Plugin in Jenkins
+  
+- Configure OpenShift in Jenkins
+  Configure OpenShift in Jenkins by providing the necessary credentials and server information
+
+- Create a Jenkins pipeline script
+
+- Run Jenkins Pipeline
+  
+- navigate to openshift clustter and check your deployed application
+
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/8132a0b0-0a50-485d-b11b-425a8e0a3f56" width="600" height="500" >
   
 
  
