@@ -12,6 +12,29 @@
     name: java-17-openjdk
     state: latest
 
+
+- name: Install required packages for Docker
+      yum:
+        name:
+          - yum-utils
+          - device-mapper-persistent-data
+          - lvm2
+        state: present
+      when: ansible_os_family == 'RedHat'
+    
+- name: Add Docker GPG key
+      rpm_key:
+        key: https://download.docker.com/linux/centos/gpg
+      when: ansible_os_family == 'RedHat'
+    
+- name: Add Docker repository
+      yum_repository:
+        name: docker-ce-stable
+        description: Docker CE Stable - $basearch
+        baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+        gpgcheck: yes
+        enabled: yes
+      when: ansible_os_family == 'RedHat'
     
 - name: Install Docker
   package:
