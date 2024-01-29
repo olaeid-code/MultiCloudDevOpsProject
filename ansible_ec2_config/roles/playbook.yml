@@ -2,7 +2,7 @@
 # playbook.yml
 ---
 - name: EC2 Instance Configuration
-  hosts: my-ec2-instance
+  hosts: webservers
   become: true
   roles:
     - ec2_configuration
