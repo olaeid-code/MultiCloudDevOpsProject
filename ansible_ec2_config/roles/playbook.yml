@@ -8,4 +8,5 @@
     - ec2_configuration
     - packages1
     - jenkins
+    - SonarQube
 
