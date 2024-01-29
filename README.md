@@ -43,7 +43,7 @@
   and write the pipeline script directly in the script box and click "save."
 - click `build now`
 
-  <img src="(https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/9e8d4451-073f-46b6-ae23-35df6b320647" width="600" height="400" >
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/9e8d4451-073f-46b6-ae23-35df6b320647" width="500" height="300" >
 
   
 ### pipeline script Explanation:
@@ -52,6 +52,11 @@
  `Build Image` stage builds the Docker image using the specified Dockerfile.
  
  `Push Image` stage pushes the built Docker image to a Docker registry.
+
+ ### Credentials
+ - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
+
+# Automated Deployment Pipeline
 
 
  
