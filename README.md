@@ -88,7 +88,9 @@
 - navigate to openshift clustter and check your deployed application
 
   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/8132a0b0-0a50-485d-b11b-425a8e0a3f56" width="600" height="500" >
-  
+
+
+  # Monitoring and Logging on OpenShift 
 
  
 
