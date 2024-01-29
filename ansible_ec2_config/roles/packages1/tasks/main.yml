@@ -12,48 +12,7 @@
     name: java-17-openjdk
     state: latest
 
-- name: Update apt packages
-  apt:
-    update_cache: yes
-    become: true
-
-- name: Install required packages
-  package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - gnupg2
-    - software-properties-common
-    - containerd.io
-    - docker-buildx-plugin
-    - docker-ce
-    - docker-ce-cli
-    - docker-compose
-    - docker-compose-plugin
-    # this module is required to run `docker` command through Ansible.
-    - python3-docker
-
-- name: Add Docker GPG key
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
-    become: true
-
-- name: Add Docker APT repository
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
-    state: present
-    become: true
-
-- name: Update apt packages
-  apt:
-    update_cache: yes
-    become: true
-      
-
+    
 - name: Install Docker
   package:
     name: docker-ce
