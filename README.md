@@ -58,6 +58,14 @@
 
 # Automated Deployment Pipeline
 
+<img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/aafe7342-0364-42d1-8b6c-0ba48344324f" width="500" height="300" >
+
+### Integrate SonarQube and openshift with Jenkins
+
+#### SonarQube installation
+###### Prerequisite:
+- Java 17
+  
 
  
 
