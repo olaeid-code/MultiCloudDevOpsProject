@@ -39,6 +39,7 @@
 # Continuous Integration with Jenkins
 - Open Jenkins and click on "New Item" to create a new job 
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
+ - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
 - In the project configuration, scroll down to the "Pipeline" section. 
   and write the pipeline script directly in the script box and click "save."
 - click `build now`
@@ -53,8 +54,6 @@
  
  `Push Image` stage pushes the built Docker image to a Docker registry.
 
- ### Credentials
- - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
 
 # Automated Deployment Pipeline
 
