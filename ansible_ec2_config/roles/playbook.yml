@@ -5,7 +5,7 @@
   hosts: webservers
   become: true
   roles:
-    - ec2_configuration
+    - Environmen_vars
     - packages1
     - jenkins
     - SonarQube
