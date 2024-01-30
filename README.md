@@ -134,16 +134,18 @@
 - ### Configure Terraform Backend for S3:
   Terraform configuration to use the newly created S3 bucket as the backend for storing state files.
 
-  `bucket`    = "your-unique-bucket-name"
+  `bucket`          = "your-unique-bucket-name"
   
-  `key`       = "terraform.tfstate"
+  `key`             = "terraform.tfstate"
 
-  `region`    = "your-aws-region"
+  `region`          = "your-aws-region"
 
-  `encrypt`   = "true"
+  `encrypt`         = "true"
+
+  `dynamodb_table`  = "terraform_locks"
 
 - ### Enable Remote State Configuration:
-  Run terraform init to initialize configuration and configure Terraform to use the S3 backend.
+  Run `terraform init` to initialize configuration and configure Terraform to use the S3 backend.
 
 - ### Create CloudWatch Alarms for Monitoring:
 - Define CloudWatch alarms using terraform to monitor specific metrics. `create an alarm for high CPU utilization`
@@ -171,6 +173,10 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
 
    ```
 
+- ### Update IAM Roles and Policies:
+   IAM role used by your Terraform script has the necessary permissions to create and modify resources, as well as permissions to write to the S3 bucket and access CloudWatch.
+
+  
 - ### Apply Terraform Configuration:
   run `terraform init` followed by `terraform apply` to apply the Terraform configuration.
 
