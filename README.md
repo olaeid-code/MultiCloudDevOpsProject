@@ -42,13 +42,17 @@
 
    Manage Jenkins → Plugins → Installed Plugins →
   
-- Open Jenkins and click on "New Item" to create a new job 
+- Open Jenkins and click on "New Item" to create a new job
+  
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
+  
  - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
+   
    Manage Jenkins → Credentials → System → Global credentials → Add credentials
 
    
-- In the project configuration, scroll down to the "Pipeline" section. 
+- In the project configuration, scroll down to the "Pipeline" section.
+  
   and write the pipeline script directly in the script box and click "save."
   
 - click `build now`
@@ -91,6 +95,7 @@
 - Install OpenShift Client Plugin in Jenkins
   
 - Configure OpenShift in Jenkins
+  
   Configure OpenShift in Jenkins by providing the necessary credentials and server information
 
 - Create a Jenkins pipeline script
@@ -142,9 +147,11 @@
 # AWS integration in the Terraform Code
 
 - ### Create an S3 Bucket for Terraform Backend:
+  
   Create an S3 bucket to store Terraform state files. This is where Terraform state will be stored remotely.
 
 - ### Configure Terraform Backend for S3:
+  
   Terraform configuration to use the newly created S3 bucket as the backend for storing state files.
 
   `bucket`          = "your-unique-bucket-name"
@@ -158,6 +165,7 @@
   `dynamodb_table`  = "terraform_locks"
 
 - ### Enable Remote State Configuration:
+  
   Run `terraform init` to initialize configuration and configure Terraform to use the S3 backend.
 
 - ### Create CloudWatch Alarms for Monitoring:
@@ -192,10 +200,12 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
    ```
 
 - ### Update IAM Roles and Policies:
+  
    IAM role used by your Terraform script has the necessary permissions to create and modify resources, as well as permissions to write to the S3 bucket and access CloudWatch.
 
   
 - ### Apply Terraform Configuration:
+  
   run `terraform init` followed by `terraform apply` to apply the Terraform configuration.
 
   - This will create the S3 bucket for the Terraform backend and set up CloudWatch alarms.
