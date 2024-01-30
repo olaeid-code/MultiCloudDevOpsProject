@@ -38,7 +38,8 @@
 
 # Continuous Integration with Jenkins
 
-- check the installation of the required plugins [Docker Pipeline Plugin, Git Plugin]
+- Check the installation of the required plugins [Docker Pipeline Plugin, Git Plugin]
+
    Manage Jenkins → Plugins → Installed Plugins →
   
 - Open Jenkins and click on "New Item" to create a new job 
