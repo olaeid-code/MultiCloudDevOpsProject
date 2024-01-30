@@ -48,7 +48,7 @@
   
 - click `build now`
 
-  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/9e8d4451-073f-46b6-ae23-35df6b320647" width="500" height="300" >
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/9e8d4451-073f-46b6-ae23-35df6b320647" width="600" height="300" >
 
   
 ### pipeline script Explanation:
@@ -75,7 +75,7 @@
 
   Provide a name, check Install automatically , select a version and save.
 
-  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/82ba6e20-85cd-488f-aa02-dd9b0b750034" width="600" height="500">
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/82ba6e20-85cd-488f-aa02-dd9b0b750034" width="600" height="300">
 
  -  Add the generated token in your sonnarqube project to Jenkins credentials
  
