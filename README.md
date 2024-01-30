@@ -1,12 +1,12 @@
 # MultiCloudDevOpsProject
-## Terraform module
-### Argumentes: `variables.tf`
+## Terraform module `Network Module`
+### Network Module Argumentes: `variables.tf`
 - `vpc_cidr`
 - `public_subnet_cidr`
 - `private_subnet_b_cidr`
 - ` private_subnet_c_cidr`
 - `region`
-### Attributes: `outputs.tf`
+### Network Module Attributes: `outputs.tf`
 - `vpc_id`
 - `public_subnet_id`
 - ` private_subnet_b_id`
