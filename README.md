@@ -18,7 +18,7 @@
  `ansible_ec2_config`
 
 ### ansible roles
-`ec2_configuration` : AWS instance configuration for programmatic access
+`Environmen_vars` : Set up environment variables for Jenkins and SonarQube packages
 
 `packages1` : Install the required packages (e.g., Git, Docker, Java)
 
