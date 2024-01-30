@@ -148,7 +148,12 @@
   Run `terraform init` to initialize configuration and configure Terraform to use the S3 backend.
 
 - ### Create CloudWatch Alarms for Monitoring:
-- Define CloudWatch alarms using terraform to monitor specific metrics. `create an alarm for high CPU utilization`
+
+- ensure that cloudwatch metrics and logs are enabled into bucket settings.
+  
+- Define CloudWatch alarms using terraform to monitor metrics of s3 bucket.
+  
+- create backend terraform file to define cloudwatch service
 
   
  ```bash
