@@ -40,8 +40,13 @@
 - Open Jenkins and click on "New Item" to create a new job 
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
  - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
+
+  Manage Jenkins → Credentials → System → Global credentials → Add credentials
+
+   
 - In the project configuration, scroll down to the "Pipeline" section. 
   and write the pipeline script directly in the script box and click "save."
+  
 - click `build now`
 
   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/9e8d4451-073f-46b6-ae23-35df6b320647" width="500" height="300" >
@@ -65,15 +70,19 @@
 
   Manage Jenkins → Manage Plugins → Available Plugins → Search “SonarScanner” → Select checkbox → Install
 
-- configure Configure Jenkins SonarQube Scanner
+- Configure Jenkins SonarQube Scanner
   
-  Manage Jenkins → Global Tool Configuration.
+  Manage Jenkins → Tools  → 
 
   Provide a name, check Install automatically , select a version and save.
-  
+
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/82ba6e20-85cd-488f-aa02-dd9b0b750034" width="600" height="500">
+
+ -  Add the generated token in your sonnarqube project to Jenkins credentials
+ 
 - Configure SonarQube server information, including the server URL and authentication token
 
-- Add the generated token in your sonnarqube project to Jenkins credentials
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/c3d2d30e-435e-4fe8-aebc-73e943d7473f" width="600" height="500">
 
 - Install OpenShift Client Plugin in Jenkins
   
