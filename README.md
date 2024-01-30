@@ -40,8 +40,7 @@
 - Open Jenkins and click on "New Item" to create a new job 
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
  - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
-
-  Manage Jenkins → Credentials → System → Global credentials → Add credentials
+   Manage Jenkins → Credentials → System → Global credentials → Add credentials
 
    
 - In the project configuration, scroll down to the "Pipeline" section. 
