@@ -39,6 +39,8 @@
 # Continuous Integration with Jenkins
 
 - check the installation of the required plugins [Docker Pipeline Plugin, Git Plugin]
+   Manage Jenkins → Plugins → Installed Plugins →
+  
 - Open Jenkins and click on "New Item" to create a new job 
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
  - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
