@@ -91,7 +91,42 @@
   
 # Monitoring and Logging on OpenShift 
 
- 
+- install OperatorHub Red Hat OpentShift Logging
+
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/11394d92-c8c3-433a-a8ed-141c59fab9b9" width="600" height="200">
+
+- install OpenShift ElasticSearch OperatorHub
+
+   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/44dc7942-b66d-4b17-9a44-d250d4d46852" width="600" height="300">
+
+
+- create cluster logging instance
+
+   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/89653e12-bcf9-479d-9208-4fb99c4ff8bf" width="600" height="300">
+
+- select kibana route link
+
+- Log in using the same credentials you use to log in to the OpenShift Container Platform console.
+
+   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/7b218aa9-1b27-4255-a669-b919d9aa30d8" width="600" height="300">
+
+- The Kibana interface launches
+
+  <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/1fab55b8-d323-4be8-a3ed-fb456a32c531" width="600" height="200">
+
+- Search and browse your data using the Discover page
+
+- Chart and map your data using the Visualize page
+
+- Create and view custom dashboards using the Dashboard page
+
+- Connect Kibana with Elasticsearch
+
+- create index pattern
+
+- Start Exploring your Data!
+
+
 
 
 
