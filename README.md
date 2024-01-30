@@ -127,6 +127,57 @@
 - Start Exploring your Data!
 
 
+# AWS integration in the Terraform Code
+
+- ### Create an S3 Bucket for Terraform Backend:
+  Create an S3 bucket to store Terraform state files. This is where Terraform state will be stored remotely.
+
+- ### Configure Terraform Backend for S3:
+  Terraform configuration to use the newly created S3 bucket as the backend for storing state files.
+
+  `bucket`    = "your-unique-bucket-name"
+  
+  `key`       = "terraform.tfstate"
+
+  `region`    = "your-aws-region"
+
+  `encrypt`   = "true"
+
+- ### Enable Remote State Configuration:
+  Run terraform init to initialize configuration and configure Terraform to use the S3 backend.
+
+- ### Create CloudWatch Alarms for Monitoring:
+- Define CloudWatch alarms using terraform to monitor specific metrics. `create an alarm for high CPU utilization`
+
+  
+ ```bash
+
+# cloudwatch.tf
+resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
+  alarm_name          = "HighCPUUtilization"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period              = 300
+  statistic           = "Average"
+  threshold           = 90
+
+  dimensions = {
+    InstanceId = "instance_id"
+  }
+
+  alarm_actions = ["arn:aws:sns:us-east-1:_account_id:_sns_topic"]
+}
+
+   ```
+
+- ### Apply Terraform Configuration:
+  run `terraform init` followed by `terraform apply` to apply the Terraform configuration.
+
+  - This will create the S3 bucket for the Terraform backend and set up CloudWatch alarms.
+
+  
 
 
 
