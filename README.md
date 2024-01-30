@@ -37,6 +37,8 @@
 <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/ebff67f8-529d-45ef-8d2c-1f081d35b6d2" width="600" height="400" >
 
 # Continuous Integration with Jenkins
+
+- check the installation of the required plugins [Docker Pipeline Plugin, Git Plugin]
 - Open Jenkins and click on "New Item" to create a new job 
 - Enter an item name `CI-jenkines` and select "pipeline" as the job type and click "OK."
  - Configure Docker credentials in Jenkins as "Secret text" or "Secret file" and refer to them in the script.
