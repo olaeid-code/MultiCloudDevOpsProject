@@ -1,0 +1,24 @@
+- name: Add SonarQube APT key
+  apt_key:
+    url: https://binaries.sonarsource.com/SonarSource/sonarqube-gcp/sonarqube-8.9.4.48382.gcp.asc
+    state: present
+  become: true
+
+- name: Add SonarQube APT repository
+  apt_repository:
+    repo: deb https://binaries.sonarsource.com/SonarSource/sonarqube-gcp/sonarqube-8.9.4.48382.gcp/ buster main
+    state: present
+  become: true
+
+- name: Install SonarQube
+  apt:
+    name: sonarqube
+    state: present
+  become: true
+
+- name: Start SonarQube service
+  systemd:
+    name: sonarqube
+    state: started
+    enabled: yes
+

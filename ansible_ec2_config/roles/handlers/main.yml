@@ -1,0 +1,12 @@
+---
+- name: Start Docker Service
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Start Jenkins Service
+  systemd:
+    name: jenkins
+    state: started
+    enabled: yes

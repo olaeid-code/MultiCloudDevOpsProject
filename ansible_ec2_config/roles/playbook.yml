@@ -1,0 +1,12 @@
+
+# playbook.yml
+---
+- name: EC2 Instance Configuration
+  hosts: webservers
+  become: true
+  roles:
+    - ec2_configuration
+    - packages1
+    - jenkins
+    - SonarQube
+
