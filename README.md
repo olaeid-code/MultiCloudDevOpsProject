@@ -75,6 +75,21 @@ there is one module named `Network Module`
 
 ### Integrate SonarQube and openshift with Jenkins
 
+- Run Sonarqube container:
+  ```bash
+   docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:8.9.1-community
+  ```
+
+- Open a web browser and go to `http://localhost:9000` 
+
+ - Create new project
+
+ - create token
+
+ - Choose What option best describes your build and follow instructions as following:
+
+   <img src="(https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/22776a23-7bf5-4745-b207-6f3d12a91faf" width="600" height="300">
+   
 - Add SonarScanner plugin in Jenkins
 
   Manage Jenkins → Manage Plugins → Available Plugins → Search “SonarScanner” → Select checkbox → Install
