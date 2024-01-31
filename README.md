@@ -88,7 +88,7 @@ there is one module named `Network Module`
 
  - Choose What option best describes your build and follow instructions as following:
 
-   <img src="(https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/22776a23-7bf5-4745-b207-6f3d12a91faf" width="600" height="300">
+   <img src="https://github.com/olaeid-code/MultiCloudDevOpsProject/assets/75432566/22776a23-7bf5-4745-b207-6f3d12a91faf" width="600" height="300">
    
 - Add SonarScanner plugin in Jenkins
 
