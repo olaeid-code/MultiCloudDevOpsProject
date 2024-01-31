@@ -44,8 +44,10 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonar-test') {
                     // Run SonarQube analysis
-                    sh 'sonar-scanner'
-                    sh './gradlew sonarqube'
+                    sh "./gradlew sonarqube \
+                        -Dsonar.projectKey=Pro-jenkins \
+                        -Dsonar.host.url=http://192.168.88.130:9000 \
+                        -Dsonar.login=36c132d965ff9ee889d10ae6daa0060bd067aae4"
                 }
             }
         }
